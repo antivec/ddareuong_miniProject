@@ -2,10 +2,7 @@
 1. DDA_DB table 생성 완료 <-- 따릉이 api 데이터 저장
 
 2. DDA_DB table에 api 데이터 이관 작업 (진행중)
-    정보 요청시 request method 사용 ? ajax function 사용? 
-    
- -- (GET-request 할떄마다 DB작업에 쿼리적용에 필요한 시간이 걸릴거 같음) 
-        --> DB데이터 갱신 버튼 따로 (admin)? / user는 DB데이터만 사용..
+
 
 3. front-end(WEB,map api) <-> apps 여기로 연결작업
 
