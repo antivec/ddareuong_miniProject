@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import path, include
 
+from dda_db.models import dda_db
+from dda_db.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('test/', index),
 ]
