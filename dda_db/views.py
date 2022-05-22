@@ -3,6 +3,7 @@ from django.shortcuts import render
 from dda_db.models import dda_db
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+import sqlite3
 import json
 import requests as req
 
@@ -31,3 +32,8 @@ def db_save(data):
         stationId = _stationId)
         to_Dda_db.save()
 
+def db_select(data):
+    db_conn = sqlite3.connect('./db.sqlite3')
+    cursor = db_conn.cursor()
+    query = ("Select stationName from DDA_DB where name LIKE {0} ").format(data)
+    cursor.execute(query)
