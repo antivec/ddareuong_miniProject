@@ -26,13 +26,14 @@
             font-weight: bold;
         }
     </style>
+</head>
 
+<body>
     <script>
         function showResult() {
             $('#names-q1').empty();
             $.ajax({
                 type: "GET",
-                headers: {'X-CSRFTOKEN'  : {'{% csrf_token %}'}}},
                 url: "http://openapi.seoul.go.kr:8088/4f4557774d776f6431323044696f6a77/json/bikeList/1/100/",
                 data: {},
                 success: function (response) {
@@ -73,28 +74,24 @@
                 }
             })
         }
+        
+
+    </script>
+
+    <script>
         function db_save(){
             $.ajax({
-                type: "GET",
-                headers: {'X-CSRFTOKEN'  : {'{% csrf_token %}'}}},
-                url: "http://openapi.seoul.go.kr:8088/4f4557774d776f6431323044696f6a77/json/bikeList/1/3/",
-                dataType: "JSON",
-                success: function(data) {
-                    {% comment %} view로 호출 {% endcomment %}
+                type:'POST',
+                url:'/db_save/',
+                success: fuction(result){
+                    alert('post succeed!')
                 },
-                error: function() {
-                    alert('Request failed!!');
+                error: function(e){
+                    alert(e)
                 }
             })
         }
     </script>
-
-</head>
-
-<body>
-
-<hr/>
-
 <div class="question-box">
     <h2>2. 서울시 OpenAPI(실시간 따릉기 현황)를 이용하기</h2>
     <p>모든 위치의 따릉이 현황을 보여주세요</p>

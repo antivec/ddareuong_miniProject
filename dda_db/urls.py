@@ -1,8 +1,11 @@
 from django.urls import path
 from .views import MainpageView
+from . import views as dda_view
 
 app_name = 'dda_db'
 
 urlpatterns = [
-   path('', MainpageView.as_view(), name='mainPage')
+   path('', MainpageView.as_view(), name='mainPage'),
+   path('db_save/',dda_view.db_save),
+   path('',dda_view.db_select)
 ]
