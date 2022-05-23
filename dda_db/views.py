@@ -19,27 +19,27 @@ class MainpageView(TemplateView):
 
 @csrf_exempt
 def db_save(data):
-    debug.log('db_save called')
-    # DdaReuong_data = data
-    # Dda_row = DdaReuong_data['rentBikeStatus']['row']
-    # for objs in Dda_row:         
-    #     _rackToint = objs['rackTotCnt']
-    #     _stationName = objs['stationName']
-    #     _parkingBikeToCnt = objs['parkingBikeTotCnt']
-    #     _shared = objs['shared']
-    #     _stationLatitude = objs['stationLatitude']
-    #     _stationLongitude = objs['stationLongitude']
-    #     _stationId = objs['stationId']
+    
+    DdaReuong_data = data
+    Dda_row = DdaReuong_data['rentBikeStatus']['row']
+    for objs in Dda_row:         
+        _rackToint = objs['rackTotCnt']
+        _stationName = objs['stationName']
+        _parkingBikeToCnt = objs['parkingBikeTotCnt']
+        _shared = objs['shared']
+        _stationLatitude = objs['stationLatitude']
+        _stationLongitude = objs['stationLongitude']
+        _stationId = objs['stationId']
 
-    #     to_Dda_db = dda_db(
-    #     rackToint = _rackToint, 
-    #     stationName = _stationName,
-    #     parkingBikeToCnt = _parkingBikeToCnt,
-    #     shared = _shared,
-    #     stationLatitude = _stationLatitude,
-    #     stationLongitude = _stationLongitude,
-    #     stationId = _stationId)
-    #     to_Dda_db.save()
+        to_Dda_db = dda_db(
+        rackToint = _rackToint, 
+        stationName = _stationName,
+        parkingBikeToCnt = _parkingBikeToCnt,
+        shared = _shared,
+        stationLatitude = _stationLatitude,
+        stationLongitude = _stationLongitude,
+        stationId = _stationId)
+        to_Dda_db.save()
 
 @csrf_exempt
 def db_select(data):

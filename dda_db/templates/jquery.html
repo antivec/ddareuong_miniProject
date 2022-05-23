@@ -72,7 +72,7 @@
                         $('#names-q1').append(temp_html);
                     }
                 }
-            })
+            });
         }
         
 
@@ -81,15 +81,15 @@
     <script>
         function db_save(){
             $.ajax({
-                type:'POST',
-                url:'/db_save/',
-                success: fuction(result){
+                type:"POST",
+                url:"/db_save/",
+                success: function(result){
                     alert('post succeed!')
                 },
                 error: function(e){
-                    alert(e)
+                    alert('error ! ')
                 }
-            })
+            });
         }
     </script>
 <div class="question-box">
