@@ -47,7 +47,28 @@ def db_update(objs):
 @csrf_exempt
 def db_save_1_to_1000(request):
     url = "http://openapi.seoul.go.kr:8088/4f4557774d776f6431323044696f6a77/json/bikeList/1/1000"  #1에서 1000개 index 요청
-    result = "DB Updated!!" # default result string --> DB 갱신 알림
+    result = "DB part.1 Updated!!" # default result string --> DB 갱신 알림
+    if request.method == 'POST':
+        try:
+            my_req = Request(url)
+            my_req.get_method = lambda : 'GET'
+            data = urlopen(my_req).read()
+            Dda_row = json.loads(data)['rentBikeStatus']['row']
+
+            for objs in Dda_row:      
+                if dda_db.objects.filter(stationName = objs['stationName']).exists() == False:  #exists() --> bool값 = (데이터존재) ? true : false  
+                    db_insert(objs) # 'stationName'과 일치하는 데이터가 없어 추가한다.
+                else:
+                    db_update(objs) # 일치하는 데이터를 가져와 갱신 시킨다.
+
+        except Exception as e: #에러 발생시 브라우저에 alert 표시
+            result = "Error Occured !! ({0})".format(e)
+    return HttpResponse(result)
+
+@csrf_exempt
+def db_save_remaining(request):
+    url = "http://openapi.seoul.go.kr:8088/4f4557774d776f6431323044696f6a77/json/bikeList/1001/1500"  #나머지 index 요청
+    result = "DB part.2 Updated!!" # default result string --> DB 갱신 알림
     if request.method == 'POST':
         try:
             my_req = Request(url)
@@ -56,7 +77,7 @@ def db_save_1_to_1000(request):
             Dda_row = json.loads(data)['rentBikeStatus']['row']
             
             for objs in Dda_row:      
-                if dda_db.objects.filter(stationName = objs['stationName']).exists() == False:  #db에 새로운 따릉이 대여소가 생겼을때     
+                if dda_db.objects.filter(stationName = objs['stationName']).exists() == False:
                     db_insert(objs)
                 else:
                     db_update(objs)

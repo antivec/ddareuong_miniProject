@@ -91,13 +91,29 @@
             });
         }
     </script>
+    <script>
+        function db_save_remaining(){
+            $('#updated_date').empty();
+            $.ajax({
+                type:"POST",
+                url:"db_save_remaining/",
+                success: function(result){
+                    alert(result)
+                },
+                error: function(result){
+                    alert(result)
+                }
+            });
+        }
+    </script>
 <div class="question-box">
     <h2>-관리자용- 서울시 OpenAPI(실시간 따릉기 현황)를 이용하기</h2>
     <p>모든 위치의 따릉이 현황을 보여주세요</p>
     <p>DB와 데이터를 비교 할 때 사용되는 디버깅용 사이트입니다!</p>
     <p>DB갱신 클릭 후 잠시만 기다리시면 팝업 창과 하면 완료됩니다!</p>
     <button onclick="showResult()">업데이트</button>
-    <button onclick="db_save_1_to_1000()">DB갱신</button>
+    <button onclick="db_save_1_to_1000()">DB갱신 Part.1</button>
+    <button onclick="db_save_remaining()">DB갱신 Part.2</button>
     <table>
         <thead>
         <tr>                               
