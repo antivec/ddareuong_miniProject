@@ -6,6 +6,6 @@ app_name = 'dda_db'
 
 urlpatterns = [
    path('', MainpageView.as_view(), name='mainPage'),
-   path('db_save/',dda_view.db_save, name='db_save'),
+   path('db_save_1_to_1000/',dda_view.db_save_1_to_1000, name='db_save_1_to_1000'),
    path('db_select/',dda_view.db_select,name='db_select')
 ]

@@ -11,55 +11,57 @@ import json
 import requests as req
 import pickle
 
-
-
 class MainpageView(TemplateView):
     template_name = 'jquery.html'
 # Create your views here.
     def index(request):
-        return render(request, 'jquery.html')
+        return render(request, 'jquery.html')\
 
+def db_insert(objs):
+    to_Dda_db = dda_db(
+    rackTotCnt = objs['rackTotCnt'],
+    stationName = objs['stationName'],
+    parkingBikeToCnt = objs['parkingBikeTotCnt'],
+    shared = objs['shared'],
+    stationLatitude = objs['stationLatitude'],
+    stationLongitude = objs['stationLatitude'],
+    stationId = objs['stationLatitude'])            
+    to_Dda_db.save()
+    return 
+
+def db_update(objs):
+    update_date = dda_db.objects.get(stationName = objs['stationName']) #이미 있는 대여소의 데이터를 갱신할때
+    update_date.rackTotCnt = objs['rackTotCnt']
+    update_date.parkingBikeToCnt = objs['parkingBikeTotCnt']
+    update_date.shared = objs['shared']
+    update_date.stationLatitude = objs['stationLatitude']
+    update_date.stationLongitude = objs['stationLatitude']
+    update_date.stationId = objs['stationLatitude']
+    update_date.save()
+    return
+
+#####################################주의#####################################################
+##호출시 시스템 부하로 한번에 최대 1,000건를 초과할수 없습니다.                                  #
+##2회 나누어 호출하시기 바랍니다. 예) 1/1,000, 1001/2,000 (대여소 수 : '18.11월말기준 1,471개소) #
+##############################################################################################
 @csrf_exempt
-def db_save(request):
-    url = "http://openapi.seoul.go.kr:8088/4f4557774d776f6431323044696f6a77/json/bikeList/1/6"  #1에서 n개 index 요청
-    result = "DB Updated!!"
+def db_save_1_to_1000(request):
+    url = "http://openapi.seoul.go.kr:8088/4f4557774d776f6431323044696f6a77/json/bikeList/1/1000"  #1에서 1000개 index 요청
+    result = "DB Updated!!" # default result string --> DB 갱신 알림
     if request.method == 'POST':
-        try: #예외처리
+        try:
             my_req = Request(url)
             my_req.get_method = lambda : 'GET'
             data = urlopen(my_req).read()
             Dda_row = json.loads(data)['rentBikeStatus']['row']
-
-            for objs in Dda_row:                    
-                _rackToint = objs['rackTotCnt']
-                _stationName = objs['stationName']
-                _parkingBikeToCnt = objs['parkingBikeTotCnt']
-                _shared = objs['shared']
-                _stationLatitude = objs['stationLatitude']
-                _stationLongitude = objs['stationLongitude']
-                _stationId = objs['stationId']
-                to_Dda_db = dda_db(
-                rackToint = _rackToint, 
-                stationName = _stationName,
-                    parkingBikeToCnt = _parkingBikeToCnt,
-                    shared = _shared,
-                    stationLatitude = _stationLatitude,
-                    stationLongitude = _stationLongitude,
-                    stationId = _stationId)
-
-                if dda_db.objects.filter(stationName = _stationName).exists() == False:                                  
-                    to_Dda_db.save()
+            
+            for objs in Dda_row:      
+                if dda_db.objects.filter(stationName = objs['stationName']).exists() == False:  #db에 새로운 따릉이 대여소가 생겼을때     
+                    db_insert(objs)
                 else:
-                    dda_db.objects.get(stationName = _stationName)
-                    dda_db.rackToint = _rackToint
-                    dda_db.parkingBikeToCnt = _parkingBikeToCnt
-                    dda_db.shared = _shared
-                    dda_db.stationLatitude = _stationLatitude
-                    dda_db.stationLongitude = _stationLongitude
-                    dda_db.stationId = _stationId
-                    dda_db.save()
+                    db_update(objs)
 
-        except Exception as e:
+        except Exception as e: #에러 발생시 브라우저에 alert 표시
             result = "Error Occured !! ({0})".format(e)
     return HttpResponse(result)
 
