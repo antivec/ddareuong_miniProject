@@ -20,6 +20,5 @@ from dda_db.models import dda_db
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('bikeapp.urls')),
     path('dda_db/',include('dda_db.urls')),
 ]

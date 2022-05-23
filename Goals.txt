@@ -2,7 +2,8 @@
 1. DDA_DB table 생성 완료 <-- 따릉이 api 데이터 저장
 
 2. DDA_DB table에 api 데이터 이관 작업 (진행중)
-
+jquery 데이터 가져오기 -> views db 저장하기 (x)
+jquery 에서 버튼 명령 -> views 데이터 & db 저장 동시 진행
 
 3. front-end(WEB,map api) <-> apps 여기로 연결작업
 

@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import db_save
+from .views import MainpageView
+
+app_name = 'dda_db'
 
 urlpatterns = [
-   path('update_db/', db_save, name='db_save')
+   path('', MainpageView.as_view(), name='mainPage')
 ]
