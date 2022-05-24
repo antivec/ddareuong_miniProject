@@ -15,10 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from django.conf import settings
 from dda_db.models import dda_db
+
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('dda_db/',include('dda_db.urls')),
+    path('dda_db/',include('dda_db.urls')), ## 관리자용 DB관리 페이지
+    path('',include('bikeapp.urls')), ## BIKEAPP 24일 아침 버전일거에요~ // 저녁까지 진행된 bikeapp 갱신 필요
 ]
+
+# if settings.DEBUG:
+#     import debug_toolbar
+#     urlpatterns = +[
+#         path('__debug__/', include(debug_toolbar.urls)),
+#     ]
