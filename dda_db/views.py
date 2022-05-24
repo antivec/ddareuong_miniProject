@@ -10,6 +10,7 @@ import sqlite3
 import json
 import requests as req
 import pickle
+import re
 
 class MainpageView(TemplateView):
     template_name = 'jquery.html'
@@ -30,14 +31,18 @@ def db_insert(objs):
     return 
 
 def db_update(objs):
-    update_date = dda_db.objects.get(stationName = objs['stationName']) #이미 있는 대여소의 데이터를 갱신할때
-    update_date.rackTotCnt = objs['rackTotCnt']
-    update_date.parkingBikeToCnt = objs['parkingBikeTotCnt']
-    update_date.shared = objs['shared']
-    update_date.stationLatitude = objs['stationLatitude']
-    update_date.stationLongitude = objs['stationLatitude']
-    update_date.stationId = objs['stationLatitude']
-    update_date.save()
+    update_data = dda_db.objects.get(stationName = objs['stationName']) #이미 있는 대여소의 데이터를 갱신할때
+
+    non_filteredName = objs['stationName']
+    filteredName = re.compile('[^ㄱ-ㅣ가-힣]+').sub('',non_filteredName)
+    update_data.stationName = filteredName
+    update_data.rackTotCnt = objs['rackTotCnt']
+    update_data.parkingBikeToCnt = objs['parkingBikeTotCnt']
+    update_data.shared = objs['shared']
+    update_data.stationLatitude = objs['stationLatitude']
+    update_data.stationLongitude = objs['stationLatitude']
+    update_data.stationId = objs['stationLatitude']
+    update_data.save()
     return
 
 #####################################주의#####################################################
@@ -46,7 +51,7 @@ def db_update(objs):
 ##############################################################################################
 @csrf_exempt
 def db_save_1_to_1000(request):
-    url = "http://openapi.seoul.go.kr:8088/4f4557774d776f6431323044696f6a77/json/bikeList/1/1000"  #1에서 1000개 index 요청
+    url = "http://openapi.seoul.go.kr:8088/4f4557774d776f6431323044696f6a77/json/bikeList/1/4"  #1에서 1000개 index 요청
     result = "DB part.1 Updated!!" # default result string --> DB 갱신 알림
     if request.method == 'POST':
         try:
