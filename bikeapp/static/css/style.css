@@ -362,7 +362,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Home쪽 이미지 */
 #hero {
   width: 100%;
-  background: url("../img/hero-bg.jpg");
+  background: url("../img/main.png");
   position: relative;
   padding: 120px 0 0 0;
 }
@@ -701,14 +701,14 @@ section {
 
 /* About쪽 이미지 관련 */
 .about .video-box {
-  background: url("../img/8325.jpg") center center no-repeat;
-  background-size: contain;
-  
-  min-height: 500px;
+  background: url("../img/riding.gif") no-repeat;
+  background-size: 500px 400px;
+  min-height: 700px;
+  background-position: 55% 20%;
 }
 /* About쪽 이미지 관련 */
 
-.about .play-btn {
+/* .about .play-btn {
   width: 94px;
   height: 94px;
   background: radial-gradient(#3f43fd 50%, rgba(63, 67, 253, 0.4) 52%);
@@ -775,7 +775,7 @@ section {
   -webkit-animation: none;
   animation: none;
   border-radius: 0;
-}
+} */
 
 @-webkit-keyframes pulsate-btn {
   0% {
@@ -819,13 +819,14 @@ section {
   padding: 0;
   line-height: 1;
   font-size: 16px;
+  color: #9B26E9;
 }
 .features .icon-box h3 a {
-  color: #010483;
+  color: #9B26E9;
   transition: ease-in-out 0.3s;
 }
 .features .icon-box h3 a:hover {
-  color: #01036f;
+  color: #9B26E9;
 }
 .features .icon-box:hover {
   background: #ebebff;
@@ -836,7 +837,11 @@ section {
 --------------------------------------------------------------*/
 .counts {
   background: #f5f5ff;
-  padding: 70px 0 60px;
+  background-image: url(../img/자전거길찾기.png);
+  background-repeat: no-repeat;
+  background-position: 90% 50%;
+  background-size: 50%;
+  padding: 100px 0 500px;
 }
 .counts .count-box {
   padding: 30px 30px 25px 30px;
@@ -872,7 +877,7 @@ section {
   padding: 0;
   margin: 0;
   font-family: "ONE", sans-serif;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -1381,7 +1386,7 @@ section {
 /* 출처 박스 */
 #footer .footer-top .footer-info {
   margin-bottom: 15px;
-  background: #60b5d0;
+  background: #67B7FD;
   color: #fff;
   border-top: 4px solid #00fb9f;
   text-align: center;
@@ -1502,4 +1507,80 @@ section {
   #footer .footer-top .footer-info {
     margin: -20px 0 30px 0;
   }
+}
+.bg{
+  width: 100%;
+  height:auto;
+  min-height:100vh;
+  background: linear-gradient(#f9f9f9 0%, #67B7FD 100%);
+  /* background-image:url(http://i.imgur.com/w16HASj.png); */
+  background-size: 100% 100%;
+  background-position: top center;
+}
+
+.content{
+margin-top: 20%;
+}
+
+.centered {
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.InputStyle{
+border-radius: 25px;
+border: solid 1px black;
+background: transparent;
+width: 200px;
+height: 30px;
+padding: 10px 20px;
+}
+
+
+
+input,input::-webkit-input-placeholder {
+  font-size: 12px;
+  color:black;
+}
+
+.social-btn{
+position: absolute; 
+bottom: 20px;
+left: 47%;
+}
+
+i{
+padding:5px;
+color:rgba(91, 196, 228, 0.91);
+}
+
+input, input:focus{
+border: solid 1px black;
+      outline:0; 
+      -webkit-appearance:none;
+      box-shadow: nones;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+}
+
+/* 출발지 도착지 글자색 */
+.secondLine{
+font-weight: 350;
+font-size:15px;
+margin-bottom: 10%;
+color: rgba(91, 196, 228, 0.91);
+}
+
+.firstLine{
+font-size: 30px;
+color: rgba(91, 196, 228, 0.91);
+}
+/* 출발지 도착지 글자색 */
+
+@media only screen and (max-width: 600px) {
+.firstLine{
+font-size: 20px;
+}
 }

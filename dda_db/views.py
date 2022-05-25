@@ -2,7 +2,7 @@ from distutils.log import debug
 from django.shortcuts import render
 from urllib3 import HTTPResponse
 from dda_db.models import dda_db
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from urllib.request import urlopen,Request
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import TemplateView
@@ -94,8 +94,7 @@ def db_select_LatLong(request): ##query 사용하여 json 파일 template로 전
         db_conn = sqlite3.connect('./db.sqlite3')
         cursor = db_conn.cursor()
         stationName =request.GET.get('rt2')
-        query = "SELECT stationName,stationLatitude,stationLongitude FROM DDA_DB WHERE stationId == 'ST-4'"
-        # query = "SELECT stationName,stationLatitude,stationLongitude FROM DDA_DB WHERE stationName LIKE '% {0} %' ".format(stationName)
+        query = "SELECT stationName,stationLatitude,stationLongitude FROM DDA_DB WHERE stationName LIKE '%{0}%' ".format(stationName)
 
         cursor.execute(query)
         row_headers=[x[0] for x in cursor.description] #[stationName, stationLatitude, stationLongitude]
@@ -105,4 +104,15 @@ def db_select_LatLong(request): ##query 사용하여 json 파일 template로 전
         for result in fetched_data:
             json_data.append(dict(zip(row_headers,result)))
     
-    return render(request,'jquery.html', json_data)
+    return JsonResponse(json_data,safe=False,json_dumps_params={'ensure_ascii': False})
+
+def check_db(request): ##query 사용하여 json 파일 template로 전송
+        if request.method == 'GET':
+            try:
+                db_conn = sqlite3.connect('./db.sqlite3')
+                cursor = db_conn.cursor()
+                result = "DB Connection Online"
+            except Exception as e: #에러 발생시 브라우저에 alert 표시
+                result = e
+        
+        return HttpResponse(result)

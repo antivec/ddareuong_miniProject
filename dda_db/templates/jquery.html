@@ -29,6 +29,7 @@
 </head>
 
 <body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         function showResult() {
             $('#names-q1').empty();
@@ -106,6 +107,55 @@
             });
         }
     </script>
+
+    <script>
+        function check_db(){
+            $('#names-q1').empty();
+            const data = axios({
+                url: 'check_db/',
+                method: 'get',
+            });
+            data.then(function(result) {
+              alert(result.data)
+            });
+        }
+    </script>
+
+    <script>
+        function get_latlong(){
+            $('#names-q1').empty();
+            const data = axios({
+                url: 'db_select/',
+                method: 'get',
+                params: {
+                    'rt2' : document.querySelector('#rt2').value
+                }
+            });
+            data.then(function(result) {
+                const latlong_json = result.data
+                for(let i =0; i <latlong_json.length;i++)
+                {
+                    console.log(latlong_json[i]['stationName'])
+                    let station_Name = latlong_json[i]['stationName']
+                    let StationLat = latlong_json[i]['stationLatitude']
+                    let StationLong = latlong_json[i]['stationLongitude']
+
+                    let temp_html = ``
+                    temp_html = `<tr>
+                        <td>${station_Name}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>${StationLat}</td>
+                        <td>${StationLong}</td>
+                        <td></td>
+
+                    </tr>`
+                    $('#names-q1').append(temp_html);
+                }
+            });
+        }
+    </script>
 <div class="question-box">
     <h2>-관리자용- 서울시 OpenAPI(실시간 따릉기 현황)를 이용하기</h2>
     <p>모든 위치의 따릉이 현황을 보여주세요</p>
@@ -114,6 +164,17 @@
     <button onclick="showResult()">업데이트</button>
     <button onclick="db_save_1_to_1000()">DB갱신 Part.1</button>
     <button onclick="db_save_remaining()">DB갱신 Part.2</button>
+    <button onclick="check_db()">DB 저장상태확인</button>
+    <label>
+        <p class="label-txt">도착지</p>
+        <input type="text" class="input" id="rt2" name="rt2">
+        <div class="line-box">
+            <button type='button' onclick="get_latlong()">GET DATA</button>
+            <div class="line">
+            </div>        
+        </div>
+
+    </label>
     <table>
         <thead>
         <tr>                               

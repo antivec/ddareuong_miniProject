@@ -81,28 +81,11 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#features">Features</a></li>
-          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#features">개발환경</a></li>
+          <li><a class="nav-link scrollto" href="#counts">따릉이맵실행</a></li>
+          <li><a class="nav-link scrollto" href="#details">소감&질의응답</a></li>
+          <li><a class="nav-link scrollto" href="dda_db/">관리자용</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -121,13 +104,14 @@
             <h2>이제 길찾기를 이용하면서 따릉이 대여소 위치를 함께 확인해보세요! </h2>
             <div class="text-center text-lg-start">
               <a href="#about" class="btn-get-started scrollto"><i class="bi bi-bicycle"
-                  style="vertical-align: middle; font-size: 2rem"></i> <span style="vertical-align: middle">따릉이맵</span>
+                  style="vertical-align: middle; font-size: 2rem"></i> <span
+                  style="vertical-align: middle">따릉이맵이란?</span>
               </a>
             </div>
           </div>
         </div>
         <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
-          <img src="{% static 'img/riding.gif' %}" class="img-fluid animated" alt="">
+          <img src="{% static 'img/main.png' %}" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
@@ -157,16 +141,16 @@
       <div class="container-fluid">
 
         <div class="row d-flex align-items-start">
-          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items stretch"
+          <div
+            class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items stretch aos-init aos-animate"
             data-aos="fade-right">
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
-              data-autoplay="true"></a>
+            <a></a>
           </div>
 
           <div
             class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5"
             data-aos="fade-left">
-            <h3>자전거 길찾기 검색하면서 주변 대여소 위치를 알 수 없을까?</h3>
+            <h3 style="color:#0087EE">자전거 길찾기 검색하면서 주변 대여소 위치를 알 수 없을까?</h3>
             <p>자전거 길 찾을 때 출발지, 도착지 근처 따릉이 대여소를 같이 확인할 수 없어서 불편하지 않으셨나요?
               저희 프로젝트는 이 의문점에서 출발하였습니다. 자전거 길 경로를 보면서
               근처 대여소를 바로 확인하고 싶을때, 이제 한 화면에서 확인해보세요. </p>
@@ -175,7 +159,7 @@
               <div style="text-align : center;"><img src="{% static 'img/seoulbike.PNG' %}" alt="" class="img-fluid" ,
                   width=500px></div>
               </a>
-              <div style="text-align : center;">서울 자전거 따릉이에서는 따릉이 대여소 조회만 가능 (출처 : <a
+              <div style="text-align : center;">서울 자전거 따릉이에서는 따릉이 대여소 조회만 가능 <br>(출처 : <a
                   href=https://www.bikeseoul.com/app/station/moveStationRealtimeStatus.do>서울자전거 따릉이 - 무인대여시스템</a>)</div>
             </div>
 
@@ -183,7 +167,7 @@
               <div style="text-align : center;"><img src="{% static 'img/navermap.PNG' %}" alt="" class="img-fluid" ,
                   width=500px></div>
               </a>
-              <div style="text-align : center;">자전거 길찾기에서 자전거 대여소를 확인하려면 경유지를 따로 설정해주어야함
+              <div style="text-align : center;">자전거 길찾기에서 자전거 대여소를 확인하려면 경유지를 따로 설정해주어야함<br>
                 (출처 : <a
                   href=https://map.naver.com/v5/directions/-/-/-/bike?c=14123297.4594607,4510110.4580963,12,0,0,0,dh>네이버
                   길찾기</a>)</div>
@@ -194,6 +178,77 @@
 
       </div>
     </section><!-- End About Section -->
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Team</h2>
+          <p style="color:#ABF5C9">새싹 따릉이</p>
+        </div>
+
+        <div class="row" data-aos="fade-left">
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="100">
+              <div class="pic"><img src="{% static 'img/죠르디.jpg' %}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>이보라</h4>
+                <span>새싹 따릉이 조장</span>
+                <div class="social">
+                  <p></p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="200">
+              <div class="pic"><img src="{% static 'img/시나모롤.jpg' %}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>정인혜</h4>
+                <span>새싹 따릉이 조원</span>
+                <div class="social">
+                  <p></p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="300">
+              <div class="pic"><img src="{% static 'img/이브이.png' %}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>이승준</h4>
+                <span>새싹 따릉이 조원</span>
+                <div class="social">
+                  <p></p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="400">
+              <div class="pic"><img src="{% static 'img/스누피.jpg'%}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>박현우</h4>
+                <span>새싹 따릉이 조원</span>
+                <div class="social">
+                  <p></p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
 
     <!-- ======= Features Section ======= -->
     <section id="features" class="features">
@@ -216,13 +271,13 @@
                   d="M23.078,43c1.555-0.005,2.633-0.142,3.936-0.367c3.848-0.67,4.549-2.077,4.549-4.67V34h-9v-2h9.343h4.35c2.636,0,4.943-1.242,5.674-4.219c0.826-3.417,0.863-5.557,0-9.125C41.274,15.995,39.831,14,37.194,14h-3.632v5.104c0,2.966-2.686,5.896-5.764,5.896h-7.236c-2.523,0-5,1.862-5,4.377v8.586c0,2.439,1.759,4.263,4.218,4.672C19.719,42.641,21.536,43.006,23.078,43z M28.063,39c-0.821,0-1.5-0.677-1.5-1.502c0-0.833,0.679-1.498,1.5-1.498c0.837,0,1.5,0.664,1.5,1.498C29.563,38.32,28.899,39,28.063,39z">
                 </path>
               </svg>
-              <h3><a>&nbsp;Python</a></h3>
+              <h3 style=color:#9B26E9>&nbsp;Python</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <i class="bi bi-bootstrap" style="color: #5578ff;"></i>
-              <h3><a>Bootstrap</a></h3>
+              <h3 style=color:#9B26E9>Bootstrap</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
@@ -233,7 +288,7 @@
                   d="M47.49,4.67l-3.41-3.21l-1.47-1.39l-1.37,1.49L38.99,4h-8c-0.02,0-0.04,0-0.06,0.01C30.91,4,30.9,4,30.88,4H9 C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9.22l1.6-1.74l1.33-1.46L47.49,4.67z M14.45,40 c-3.72,0-6.27-1.98-6.45-5h2.55c0.27,1.64,1.81,2.62,4.09,2.62c2.09,0,3.63-1.09,3.63-2.65c0-1.37-0.91-2.1-3.18-2.65l-2.18-0.54 c-3-0.73-4.46-2.29-4.46-4.75c0-3.02,2.46-5.03,6.19-5.03c3.45,0,6,2.01,6.09,4.93h-2.55c-0.27-1.55-1.63-2.55-3.63-2.55 c-2.1,0-3.46,1-3.46,2.55c0,1.28,0.91,1.92,3.09,2.47l1.91,0.46C19.55,30.68,21,32.14,21,34.7C21,37.99,18.45,40,14.45,40z M36,34 h-9.38v0.13c0.1,2.12,1.5,3.75,3.57,3.75c1.5,0,2.62-0.53,3.09-1.5h2.53C35.25,38.67,33.09,40,30.09,40C26.34,40,24,37.52,24,33.54 S26.34,27,30.09,27c3.66,0,5.91,2.39,5.91,6.28V34z M29.73,24L19,13.8l3.23-3.4l7.31,6.8L42.71,2.91l3.41,3.21L29.73,24z M30.09,29.05c-1.85,0-3.12,1.18-3.34,2.95h6.59C33.14,30.16,31.95,29.05,30.09,29.05z">
                 </path>
               </svg>
-              <h3><a>&nbsp;Selenium</a></h3>
+              <h3 style=color:#9B26E9>&nbsp;Selenium</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
@@ -244,7 +299,7 @@
                   d="M 11 3 L 11 8.1582031 C 10.653 8.0172031 9.9041562 8 9.5351562 8 C 6.7591563 8 4.1894531 9.306 4.1894531 13 C 4.1894531 17.42 7.67 18 10 18 C 10.92 18 13 17.909141 14 17.619141 L 14 3 L 11 3 z M 16 3 L 16 6 L 19 6 L 19 3 L 16 3 z M 16 8 L 16 16.701172 C 16 18.217172 15.078 19.795172 13 20.701172 L 15.859375 21.996094 C 18.765375 20.996094 19 17.701172 19 16.701172 L 19 8 L 16 8 z M 9.9707031 10.550781 C 10.290703 10.550781 10.65 10.609453 11 10.689453 L 11 15.392578 C 10.65 15.472578 10.290703 15.533203 9.9707031 15.533203 C 8.6607031 15.533203 7.390625 15.12 7.390625 13 C 7.390625 10.88 8.6607031 10.550781 9.9707031 10.550781 z">
                 </path>
               </svg>
-              <h3><a>&nbsp;Django</a></h3>
+              <h3 style=color:#9B26E9>&nbsp;Django</h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
@@ -261,52 +316,11 @@
                   d="M9,14.104L34,33v9.647c0,1.198-1.482,1.758-2.275,0.86L4.658,18.761 c-0.9-0.83-0.849-2.267,0.107-3.032c0,0,1.324-1.232,1.803-1.574C7.304,13.63,8.271,13.57,9,14.104z">
                 </path>
               </svg>
-              <h3><a>&nbsp;Visual Studio Code</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
-              <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-              <h3><a>Eiusmod Tempor</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
-              <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-              <h3><a>Midela Teren</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
-              <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-              <h3><a>Pira Neve</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="450">
-              <i class="ri-anchor-line" style="color: #b2904f;"></i>
-              <h3><a>Dirada Pack</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="500">
-              <i class="ri-disc-line" style="color: #b20969;"></i>
-              <h3><a>Moton Ideal</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="550">
-              <i class="ri-base-station-line" style="color: #ff5828;"></i>
-              <h3><a>Verdo Park</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="600">
-              <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
-              <h3><a>Flavor Nivelanda</a></h3>
+              <h3 style=color:#9B26E9>&nbsp;Visual Studio Code</h3>
             </div>
           </div>
         </div>
+      </div>
 
       </div>
     </section><!-- End Features Section -->
@@ -317,7 +331,7 @@
 
         <div class="row" data-aos="fade-up">
           <div class="section-title" data-aos="fade-up">
-            <p>자전거 길찾기 실행</p>
+            <p style="color:#708AD4">자전거 길찾기 실행</p>
           </div>
 
           <!-- <div class="col-lg-3 col-md-6">
@@ -336,7 +350,7 @@
               <i class="bi bi-bicycle" style="font-size: 2rem"></i>
               <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
                 class="purecounter"></span>
-              <p>자전거 길찾기 실행하기</p>
+              <p style=font-size:20px;>자전거 길찾기 실행하기</p>
             </div>
           </div>
 
@@ -370,32 +384,28 @@
             <img src="{% static 'img/details-1.png' %}" class="img-fluid" alt="">
           </div>
           <div class="col-md-8 pt-4" data-aos="fade-up">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3>프로젝트 진행소감 및 보완해야할 점</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore
-              magna aliqua.
+              프로젝트를 진행하면서 앞으로 보완해야할 사항들을 점검해보고자 합니다.
             </p>
             <ul>
-              <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="bi bi-check"></i> 회원가입 및 로그인 화면을 만들어 회원들을 위한 경로 즐겨찾기 기능 추가</li>
+              <li><i class="bi bi-check"></i> </li>
               <li><i class="bi bi-check"></i> Iure at voluptas aspernatur dignissimos doloribus repudiandae.</li>
               <li><i class="bi bi-check"></i> Est ipsa assumenda id facilis nesciunt placeat sed doloribus praesentium.
               </li>
             </ul>
             <p>
-              Voluptas nisi in quia excepturi nihil voluptas nam et ut. Expedita omnis eum consequatur non. Sed in
-              asperiores aut repellendus. Error quisquam ab maiores. Quibusdam sit in officia
+              
             </p>
           </div>
         </div>
-
         <div class="row content">
           <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
             <img src="{% static 'img/details-2.png' %}" class="img-fluid" alt="">
           </div>
           <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-            <h3>Corporis temporibus maiores provident</h3>
+            <h3>질의 응답 시간 - 궁금한 사항이 있다면 질문해주세요 :)</h3>
             <p class="fst-italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore
@@ -415,536 +425,10 @@
           </div>
         </div>
 
-        <div class="row content">
-          <div class="col-md-4" data-aos="fade-right">
-            <img src="{% static 'img/details-3.png' %}" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-8 pt-5" data-aos="fade-up">
-            <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
-            <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut
-              quia voluptatem hic voluptas dolor doloremque.</p>
-            <ul>
-              <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
-            </ul>
-            <p>
-              Qui consequatur temporibus. Enim et corporis sit sunt harum praesentium suscipit ut voluptatem. Et nihil
-              magni debitis consequatur est.
-            </p>
-            <p>
-              Suscipit enim et. Ut optio esse quidem quam reiciendis esse odit excepturi. Vel dolores rerum soluta
-              explicabo vel fugiat eum non.
-            </p>
-          </div>
-        </div>
+        <!-- End Details Section -->
 
-        <div class="row content">
-          <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
-            <img src="{% static 'img/details-4.png' %}" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-            <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore
-              magna aliqua.
-            </p>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-              voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
-            <ul>
-              <li><i class="bi bi-check"></i> Et praesentium laboriosam architecto nam .</li>
-              <li><i class="bi bi-check"></i> Eius et voluptate. Enim earum tempore aliquid. Nobis et sunt consequatur.
-                Aut repellat in numquam velit quo dignissimos et.</li>
-              <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
-            </ul>
-          </div>
-        </div>
 
-      </div>
-    </section><!-- End Details Section -->
 
-    <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Gallery</h2>
-          <p>Check our Gallery</p>
-        </div>
-
-        <div class="row g-0" data-aos="fade-left">
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-              <a href="{% static 'img/gallery/gallery-1.jpg' %}" class="gallery-lightbox">
-                <img src="{% static 'img/gallery/gallery-1.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
-              <a href="{% static 'img/gallery/gallery-2.jpg' %}" class="gallery-lightbox">
-                <img src="{% static 'img/gallery/gallery-2.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-              <a href="{% static 'img/gallery/gallery-3.jpg' %}" class="gallery-lightbox">
-                <img src="{% static 'img/gallery/gallery-3.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250">
-              <a href="{% static 'img/gallery/gallery-4.jpg' %}" class="gallery-lightbox">
-                <img src="{% static 'img/gallery/gallery-4.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-              <a href="{% static 'img/gallery/gallery-5.jpg' %}" class="gallery-lightbox">
-                <img src="{% static 'img/gallery/gallery-5.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="350">
-              <a href="{% static 'img/gallery/gallery-6.jpg' %}" class="gallery-lightbox">
-                <img src="{% static 'img/gallery/gallery-6.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-              <a href="{% static 'img/gallery/gallery-7.jpg' %}" class="gallery-lightbox">
-                <img src="{% static 'img/gallery/gallery-7.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="{% static 'img/gallery/gallery-8.jpg' %}" class="gallery-lightbox">
-                <img src="{% static 'img/gallery/gallery-8.jpg' %}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Gallery Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container">
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{% static 'img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
-                  quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{% static 'img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
-                  quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{% static 'img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim
-                  tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{% static 'img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit
-                  minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{% static 'img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa
-                  labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Team</h2>
-          <p>Our Great Team</p>
-        </div>
-
-        <div class="row" data-aos="fade-left">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member" data-aos="zoom-in" data-aos-delay="100">
-              <div class="pic"><img src="{% static 'img/team/team-1.jpg' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="member" data-aos="zoom-in" data-aos-delay="200">
-              <div class="pic"><img src="{% static 'img/team/team-2.jpg' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="member" data-aos="zoom-in" data-aos-delay="300">
-              <div class="pic"><img src="{% static 'img/team/team-3.jpg' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="member" data-aos="zoom-in" data-aos-delay="400">
-              <div class="pic"><img src="{% static 'img/team/team-4.jpg'%}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Team Section -->
-
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Pricing</h2>
-          <p>Check our Pricing</p>
-        </div>
-
-        <div class="row" data-aos="fade-left">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="box" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
-            <div class="box featured" data-aos="zoom-in" data-aos-delay="200">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="300">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="400">
-              <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Pricing Section -->
-
-    <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq section-bg">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>F.A.Q</h2>
-          <p>Frequently Asked Questions</p>
-        </div>
-
-        <div class="faq-list">
-          <ul>
-            <li data-aos="fade-up">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
-                data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
-                  gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2"
-                class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
-                  donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit
-                  ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3"
-                class="collapsed">Dolor sit amet consectetur adipiscing elit? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum
-                  integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt.
-                  Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi
-                  quis
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4"
-                class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc
-                  vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus
-                  gravida quis blandit turpis cursus in.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5"
-                class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem
-                dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada
-                  nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis
-                  tellus in metus vulputate eu scelerisque.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-        </div>
-
-      </div>
-    </section><!-- End F.A.Q Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Contact</h2>
-          <p>Contact Us</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@example.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
-
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
@@ -954,7 +438,7 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-12 col-md-6">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <div style="text-align : center;"><img src="{% static 'img/bike.jpg'%}" alt="" class="img-fluid" ,
                   width=700px>
